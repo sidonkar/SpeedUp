@@ -27,35 +27,59 @@ html,body{
 .content{
     display: flex;
     flex:8;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
 }
-.left,.right {
-    flex: 1;
-    margin: 2px 0;
+.grid{
     display: flex;
+    flex: 8;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
-.left {box-shadow: 1px 0px 1px -2px black;}
-
-.right {
-    box-shadow: -1px 0px 1px -2px black;
+.output {
+    display: flex;
+    flex: 1;
+}
+span.result {
+    font-size: 50px;
+    text-align: center;
+}
+span.result {
+    width: 100px;
+    border-bottom: 1px solid;
+    margin: 10px;
 }
 
 .row {
     display: flex;
-    flex: 1;
-    flex-flow: column nowrap;
+    flex-flow: row  nowrap;
 }
 
 .cell {
-    border: 1px solid;
-    display: flex;
-    flex: 1;
-    align-items: center;
+    box-shadow: 0px 0px 1px 0px #e3e3e3,0px 0px 1px -1px black;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 2px;
+}
+.cell.selected,.cell:hover {
+    cursor: pointer;
+    background: #e3e3e3;
+    box-shadow: 0px 0px 30px 1px #555;
+    -webkit-text-stroke-width: 0;
+    -webkit-text-fill-color: black;
 }
 .alphabet{
     width: 100%;
     text-align: center;
+    font-size: 50px;
+}
+.cell.selected span.alphabet {
+    font-size: 60px;
 }
 .footer{
     display: flex;
